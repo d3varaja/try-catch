@@ -1,0 +1,58 @@
+{
+  "name": "@d3avarja/try-catch",
+  "version": "0.0.1",
+  "description": "Zero-dep TypeScript helper that wraps promises and returns { data | error } as a discriminated union",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:esm && npm run build:types",
+    "build:cjs": "tsc --module commonjs --outDir dist --declaration false",
+    "build:esm": "tsc --module esnext --outDir dist-esm && mv dist-esm/index.js dist/index.mjs && rm -rf dist-esm",
+    "build:types": "tsc --declaration --emitDeclarationOnly --outDir dist",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\"",
+    "prepare": "husky",
+    "prepublishOnly": "npm run lint && npm run format:check && npm run build"
+  },
+  "keywords": [
+    "typescript",
+    "promise",
+    "error-handling",
+    "try-catch",
+    "async",
+    "result",
+    "discriminated-union",
+    "type-safe"
+  ],
+  "author": "Tharun Devaraja",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d3varaja/try-catch.git"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.7",
+    "prettier": "^3.4.1",
+    "typescript": "^5.7.2"
+  }
+}
