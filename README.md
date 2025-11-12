@@ -5,7 +5,7 @@ Zero-dep TypeScript helper that wraps promises and returns `{ data | error }` as
 ## Installation
 
 ```bash
-npm install @d3avarja/try-catch
+npm install @d3avarja/try-catch  
 ```
 
 ## Usage
