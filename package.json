@@ -1,6 +1,6 @@
 {
   "name": "@d3avarja/try-catch",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Zero-dep TypeScript helper that wraps promises and returns { data | error } as a discriminated union",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
